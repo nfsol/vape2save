@@ -15,6 +15,7 @@ const BaseButton = styled.button`
   max-height: 180px;
   max-width: 300px;
   padding: 16px 0px;
+  margin: 1%;
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;

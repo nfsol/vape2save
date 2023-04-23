@@ -1,9 +1,39 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
+import { MoreInfo } from "./routes/MoreInfo";
+import { Calculator } from "./routes/Calculator";
+import { Welcome } from "./routes/Welcome";
+import { Monk } from "./routes/Monk";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Welcome />,
+      },
+      {
+        path: "calc",
+        element: <Calculator />,
+      },
+      {
+        path: "info",
+        element: <MoreInfo />,
+      },
+      {
+        path: "monk",
+        element: <Monk />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
