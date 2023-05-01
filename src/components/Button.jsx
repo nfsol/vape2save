@@ -33,5 +33,5 @@ const BaseButton = styled.button`
 `;
 
 export const Button = (props) => {
-  return <BaseButton type={props.type}>{props.content}</BaseButton>;
+  return <BaseButton type="button">{props.content}</BaseButton>;
 };
