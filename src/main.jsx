@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import { MoreInfo } from "./routes/MoreInfo";
 import { Calculator } from "./routes/Calculator";
+import { Results } from "./routes/Results";
 import { Welcome } from "./routes/Welcome";
 import { Monk } from "./routes/Monk";
 
@@ -23,6 +24,9 @@ const router = createBrowserRouter([
       {
         path: "info",
         element: <MoreInfo />,
+      }, {
+        path: "results/:perPack/:perWeek/:juice",
+        element: <Results />,
       },
       {
         path: "monk",

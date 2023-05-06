@@ -1,12 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-const BaseButton = styled.button`
+const BaseButton = styled(motion.button)`
   appearance: none;
-  background-color: ${(props) => props.type === "primary" ? "white" : "black"};
-  border: 2px solid #1a1a1a;
+  background-color: ${(props) =>
+    props.type === "primary" ? "white" : "#1a1a1a"};
+  border: 2px solid
+    ${(props) => (props.bordercolor ? props.bordercolor : "#1a1a1a")};
   border-radius: 15px;
   box-sizing: border-box;
-  color: ${(props) => (props.type === "primary" ? "black" : "white")};
+  color: ${(props) => (props.type === "primary" ? "#1a1a1a" : "white")};
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -25,7 +28,8 @@ const BaseButton = styled.button`
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
-  },
+  }
+  ,
   &:active {
     box-shadow: none;
     transform: translateY(0);

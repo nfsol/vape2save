@@ -4,24 +4,19 @@ import { Button } from "../components/Button";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 const OverlaidImage = styled.div`
-
-  width: 100%;
-  height: 100%;
-  max-height: 75%;
-  max-width:1080px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  background-image: url(${smoking});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: space-between;
+width: 100%;
+height: 100vh;     
+background-image: url(${smoking});
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+align-items: space-around;
 `;
 
 const ImageOverlay = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -29,6 +24,7 @@ const ImageOverlay = styled.div`
 `;
 const ButtonContainer = styled.div`
   align-self: center;
+  margin-bottom:10%
 `;
 const TextContainer = styled.div`
   align-self: left;
@@ -38,7 +34,7 @@ const TextContainer = styled.div`
 export const Welcome = () => {
   return (
     <>
-      <div className="container">
+      
         <OverlaidImage>
           <ImageOverlay>
             <TextContainer>
@@ -59,7 +55,7 @@ export const Welcome = () => {
             </ButtonContainer>
           </ImageOverlay>
         </OverlaidImage>
-      </div>
+    
     </>
   );
 };
