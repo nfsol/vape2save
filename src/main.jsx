@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         path: "info",
         element: <MoreInfo />,
       }, {
-        path: "results/:perPack/:perWeek/:juice",
+        path: "results",
         element: <Results />,
       },
       {

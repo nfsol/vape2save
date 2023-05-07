@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import cloud from "../assets/cloud.jpg";
 import styled from "styled-components";
-import { Button } from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const OverlaidImage = styled.div`
   width: 100%;
@@ -27,6 +26,8 @@ const InputContainer = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
+  align-items:center;
+  margin:5%;
 `;
 
 const InputBox = styled.input`
@@ -81,6 +82,7 @@ will-change: transform;
 }`;
 
 export const Calculator = () => {
+  const navigate = useNavigate();
   const [perPack, setPerPack] = useState(15);
   const [perWeek, setPerWeek] = useState(3.5);
   const [juice, setJuice] = useState(25);
@@ -126,7 +128,8 @@ export const Calculator = () => {
             />
             <SubmitButton
               as={Link}
-              to={`/results/${perPack}/${perWeek}/${juice}`}
+              to={`/results`}
+              state={{perPack:perPack,perWeek:perWeek,juice:juice}}
               bordercolor="#0c1e1b"
               type="Primary"
               content="Let's save some cash"
