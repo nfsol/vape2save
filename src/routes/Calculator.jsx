@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import cloud from "../assets/cloud.jpg";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 const OverlaidImage = styled.div`
@@ -16,7 +17,7 @@ const OverlaidImage = styled.div`
 
 const ImageOverlay = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -45,7 +46,7 @@ const InputBox = styled.input`
 const InputLabel = styled.label`
   font-size: 1em;
 `;
-const SubmitButton = styled.button`
+const SubmitButton = styled(motion.button)`
 appearance: none;
 background-color: ${(props) =>
   props.type === "primary" ? "white" : "#1a1a1a"};
@@ -89,7 +90,12 @@ export const Calculator = () => {
 
   const { showResults, setShowResults } = useState(false);
   return (
-    <>
+    <motion.div
+    initial={{ y: -1000 }}
+    animate={{ y: 0 }}
+    exit={{ y: 1000 }}
+    transition={{ duration: .2 }}
+    >
       <OverlaidImage>
         <ImageOverlay>
           <InputContainer>
@@ -137,6 +143,6 @@ export const Calculator = () => {
           </InputContainer>
         </ImageOverlay>
       </OverlaidImage>
-    </>
+    </motion.div>
   );
 };

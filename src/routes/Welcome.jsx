@@ -2,6 +2,7 @@ import React from "react";
 import smoking from "../assets/smoking.jpg";
 import { Button } from "../components/Button";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const OverlaidImage = styled.div`
   max-width: 100%;
@@ -33,7 +34,12 @@ const TextContainer = styled.div`
 `;
 export const Welcome = () => {
   return (
-    <>
+    <motion.div
+    initial={{ x: -500 }}
+    animate={{ x: 0 }}
+    exit={{ x: 500 }}
+    transition={{ duration: .2 }}
+    >
       <OverlaidImage>
         <ImageOverlay>
           <TextContainer>
@@ -54,6 +60,6 @@ export const Welcome = () => {
           </ButtonContainer>
         </ImageOverlay>
       </OverlaidImage>
-    </>
+    </motion.div>
   );
 };
