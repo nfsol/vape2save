@@ -91,7 +91,7 @@ export const Calculator = () => {
   const { showResults, setShowResults } = useState(false);
   return (
     <motion.div
-    initial={{ y: -1000 }}
+    initial={{ y: 1000 }}
     animate={{ y: 0 }}
     exit={{ y: 1000 }}
     transition={{ duration: .2 }}

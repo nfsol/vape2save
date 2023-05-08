@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import cloud from "../assets/cloud.jpg";
+
+import { Icon } from '@iconify/react';
+//<Icon icon="material-symbols:arrow-back-rounded" />
+//<Icon icon="material-symbols:arrow-forward-rounded" />
+
 const OverlaidImage = styled.div`
   width: 100%;
   height: 90vh;
@@ -50,8 +55,7 @@ export const Results = () => {
         <ImageOverlay>
           <ResultContainer>
             <h2>
-              If a pack of cigarettes is ${perPack} and you smoke {perWeek}{" "}
-              packs per week, and 30ml of vape liquid at ${juice}.
+              If you smoke {perWeek} packs per week at ${perPack} per pack, and 30ml of vape liquid costs ${juice}...
             </h2>
           </ResultContainer>
           <ResultContainer>
