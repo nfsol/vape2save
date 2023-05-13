@@ -20,8 +20,8 @@ export const Monk = () => {
       alignItems: "center",
       justifyContent: 'center'}}>
     <p>
-      Developers Note: I gotta put one of them 'PayMePal' links in here, some
-      day a rich chain smoking monk is gonna wander in here and I'm going to feel
+      Developers Note: I gotta put one of them 'PayMePal' links in here. Some
+      day a rich chain smoking monk is gonna wander in and I'm going to feel
       like a real dummy.
     </p>
       <Back icon="material-symbols:arrow-back-rounded" onClick={() => navigate(-1)}/>

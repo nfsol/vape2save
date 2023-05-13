@@ -51,6 +51,8 @@ export const Results = () => {
       exit={{ x: 500 }}
       transition={{ duration: .2 }}
     >
+
+
       <OverlaidImage>
         <ImageOverlay>
           <ResultContainer>
@@ -70,7 +72,7 @@ export const Results = () => {
             </h3>
           </ResultContainer>
           <ResultContainer>
-            <h2>This time next year, that's ${savingsPerMonth * 12}.</h2>
+            <h2>This time next year, that's ${savingsPerMonth * 12}!</h2>
             <h4>
               Whether you've continued vaping, are tapering off the nicotine or
               quit entirely, your chance of heart disease has likely been cut in
