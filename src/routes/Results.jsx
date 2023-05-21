@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import cloud from "../assets/cloud.jpg";
 
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
+import { Flipcard } from "../components/Flipcard";
 //<Icon icon="material-symbols:arrow-back-rounded" />
 //<Icon icon="material-symbols:arrow-forward-rounded" />
 
@@ -25,7 +26,7 @@ const ImageOverlay = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 `;
-const ResultContainer = styled.section`
+const ResultContainer = styled(Flipcard)`
   margin: 2%;
   margin-top: 0;
   font-size: 0.8em;
@@ -37,50 +38,41 @@ const ResultContainer = styled.section`
 
 export const Results = () => {
   const state = useLocation();
-  console.log(state);
   const { perPack, perWeek, juice } = state.state || {
     perPack: 15,
     perWeek: 3.5,
     juice: 25,
   };
   const savingsPerMonth = perPack * (perWeek * 4) - (perWeek / 7) * juice * 4;
+  const cardContents = [
+    {
+      title: `If you smoke ${perWeek} packs per week at ${perPack} per pack, and 30ml of vape liquid costs ${juice}...`,
+      content: "",
+    },
+    {
+      title: `You could save ${savingsPerMonth} this month.`,
+      content: "Improved cashflow AND bloodflow?",
+    },
+    {
+      title: `In three months, that's ${savingsPerMonth * 3}.`,
+      content:
+        "A breath of fresh air, and the lung capacity to appreciate it(with or without fruit flavor).",
+    },
+    {
+      title: `This time next year, that's ${savingsPerMonth * 12}!`,
+      content: `Whether you've continued vaping, are tapering off the nicotine or quit entirely, your chance of heart disease has likely been cut in half. Start planning the celebration and click below for more info. No sales pitch. Just hoping to help you save dollars and hours. ${"\uD83D\uDC93"}`,
+    },
+  ];
   return (
     <motion.div
       initial={{ x: -500 }}
       animate={{ x: 0 }}
       exit={{ x: 500 }}
-      transition={{ duration: .2 }}
+      transition={{ duration: 0.2 }}
     >
-
-
       <OverlaidImage>
         <ImageOverlay>
-          <ResultContainer>
-            <h2>
-              If you smoke {perWeek} packs per week at ${perPack} per pack, and 30ml of vape liquid costs ${juice}...
-            </h2>
-          </ResultContainer>
-          <ResultContainer>
-            <h2>You could save ${savingsPerMonth} this month.</h2>
-            <h3>Improved cashflow AND bloodflow?</h3>
-          </ResultContainer>
-          <ResultContainer>
-            <h2>In three months, that's ${savingsPerMonth * 3}.</h2>
-            <h3>
-              A breath of fresh air, and the lung capacity to appreciate it
-              (with or without fruit flavor).
-            </h3>
-          </ResultContainer>
-          <ResultContainer>
-            <h2>This time next year, that's ${savingsPerMonth * 12}!</h2>
-            <h4>
-              Whether you've continued vaping, are tapering off the nicotine or
-              quit entirely, your chance of heart disease has likely been cut in
-              half. Start planning the celebration and click below for more
-              info. No sales pitch. Just hoping to help you save dollars and
-              hours.&#x1F49C;{" "}
-            </h4>
-          </ResultContainer>
+          <ResultContainer cardContents={cardContents} />
         </ImageOverlay>
       </OverlaidImage>
     </motion.div>
