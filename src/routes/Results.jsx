@@ -26,15 +26,6 @@ const ImageOverlay = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 `;
-const ResultContainer = styled(Flipcard)`
-  margin: 2%;
-  margin-top: 0;
-  font-size: 0.8em;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export const Results = () => {
   const state = useLocation();
@@ -46,20 +37,20 @@ export const Results = () => {
   const savingsPerMonth = perPack * (perWeek * 4) - (perWeek / 7) * juice * 4;
   const cardContents = [
     {
-      title: `If you smoke ${perWeek} packs per week at ${perPack} per pack, and 30ml of vape liquid costs ${juice}...`,
-      content: "",
+      title: "Here we go:",
+      content: `If you smoke ${perWeek} packs per week at ${perPack} per pack, and 30ml of vape liquid costs ${juice}...`,
     },
     {
-      title: `You could save ${savingsPerMonth} this month.`,
-      content: "Improved cashflow AND bloodflow?",
+      title: `You could save $${savingsPerMonth} this month.`,
+      content: "Now we're talking. Your cashflow AND bloodflow are looking a little better.",
     },
     {
-      title: `In three months, that's ${savingsPerMonth * 3}.`,
+      title: `In three months, that's $${savingsPerMonth * 3}.`,
       content:
-        "A breath of fresh air, and the lung capacity to appreciate it(with or without fruit flavor).",
+        "A breath of fresh air, and an improved lung capacity to appreciate it(with or without fruit flavor).",
     },
     {
-      title: `This time next year, that's ${savingsPerMonth * 12}!`,
+      title: `This time next year, that's $${savingsPerMonth * 12}!`,
       content: `Whether you've continued vaping, are tapering off the nicotine or quit entirely, your chance of heart disease has likely been cut in half. Start planning the celebration and click below for more info. No sales pitch. Just hoping to help you save dollars and hours. ${"\uD83D\uDC93"}`,
     },
   ];
@@ -72,7 +63,7 @@ export const Results = () => {
     >
       <OverlaidImage>
         <ImageOverlay>
-          <ResultContainer cardContents={cardContents} />
+          <Flipcard cardContents={cardContents} />
         </ImageOverlay>
       </OverlaidImage>
     </motion.div>

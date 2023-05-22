@@ -30,7 +30,9 @@ const ButtonContainer = styled.div`
 const TextContainer = styled.div`
   align-self: left;
   max-width: 40%;
+  max-height:45%;
   margin-left: 5%;
+
 `;
 export const Welcome = () => {
   return (
