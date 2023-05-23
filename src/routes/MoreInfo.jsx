@@ -1,6 +1,8 @@
 import React from "react";
 import vapeShop from "../assets/vapeShop.jpg";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 const OverlaidImage = styled.div`
   width: 100%;
   height: 90vh;
@@ -32,30 +34,56 @@ const CardTitle = styled.h3`
   margin-top: 2%;
   line-height: 1.8;
   border-bottom: 2px solid white;
+  margin-bottom: 2%;
 `;
 const CardText = styled.article`
+  font-size: 0.85em;
   max-width: 70%;
   text-align: center;
   line-height: 1.15;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 `;
+
+const StopSmokingLink = styled(Link)`
+  text-decoration: inherit;
+  color: inherit;
+  border-bottom: 2px solid orange;
+  margin-bottom: 2%;
+`;
+
 export const MoreInfo = () => {
   return (
     <div>
       <OverlaidImage>
         <ImageOverlay>
           <CardContainer>
-            <CardTitle>One entry about quitting</CardTitle>
+            <CardTitle>Contact a Local Vape Shop</CardTitle>
             <CardText>
-              Elit qui irure officia velit cupidatat cupidatat ex aliquip et
-              dolore nulla tempor sit occaecat.
+              While vaping products are sold in many forms and places... When in
+              doubt your best bet is to call, email or stop by your local vape
+              shop. Get advice, recommendations and some hard numbers on all the
+              cash you're gonna save. Feeling shy? No problem! Your favorite
+              search engine will lead you to many online offerings as well!
             </CardText>
           </CardContainer>
           <CardContainer>
-            <CardTitle>One about locating vape stores</CardTitle>
+            <CardTitle>Or Maybe it's Time to Quit.</CardTitle>
             <CardText>
-              Anim irure pariatur reprehenderit eu duis occaecat.
+              Perhaps a reminder of the financial cost of cigarettes was enough
+              to urge you to quit entirely, or maybe you'd just like some more
+              information. Maybe you're just really into smoking cessation
+              media, we aren't judging. What ever your reason for ending up
+              here: You should know that the Government of Canada has a great
+              collection of resources that we've accidently left a link to
+              below.
             </CardText>
+            <StopSmokingLink
+              to={
+                "https://www.canada.ca/en/health-canada/campaigns/quit-smoking.html"
+              }
+            >
+              Oops.
+            </StopSmokingLink>
           </CardContainer>
         </ImageOverlay>
       </OverlaidImage>

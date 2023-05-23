@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const CardContainer = styled.section`
   margin: 2%;
   margin-top: 0;
