@@ -37,18 +37,18 @@ const CardTitle = styled.h3`
   margin-bottom: 2%;
 `;
 const CardText = styled.article`
-  font-size: 0.85em;
+  font-size: 0.75em;
+  line-height: 1.2;
   max-width: 70%;
   text-align: center;
-  line-height: 1.15;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 `;
 
 const StopSmokingLink = styled(Link)`
   text-decoration: inherit;
   color: inherit;
   border-bottom: 2px solid orange;
-  margin-bottom: 2%;
+  margin-bottom: 10%;
 `;
 
 export const MoreInfo = () => {
@@ -67,13 +67,12 @@ export const MoreInfo = () => {
             </CardText>
           </CardContainer>
           <CardContainer>
-            <CardTitle>Or Maybe it's Time to Quit.</CardTitle>
+            <CardTitle>Maybe it's Time to Quit.</CardTitle>
             <CardText>
-              Perhaps a reminder of the financial cost of cigarettes was enough
+              Perhaps seeing the cost of cigarettes was enough
               to urge you to quit entirely, or maybe you'd just like some more
-              information. Maybe you're just really into smoking cessation
-              media, we aren't judging. What ever your reason for ending up
-              here: You should know that the Government of Canada has a great
+              information. Maybe you're really into smoking cessation
+              media, we aren't judging. What ever your reason: You should know that the Government of Canada has a great
               collection of resources that we've accidently left a link to
               below.
             </CardText>
